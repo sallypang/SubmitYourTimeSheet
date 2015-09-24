@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<title> Submit me! </title>
+
+<link rel="stylesheet" type="text/css" href="legend.css">
+
+<style type="text/css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+a:link {color: #ffffff; text-decoration: underline; }
+a:active {color: #cccccc; text-decoration: underline; }
+a:visited {color: #fff; text-decoration: underline; }
+a:hover {color: #3caa85; text-decoration: none; }
+</style>
+
+</head>
+
+<body>
+
+<div id="title">
+<p> Submit Timesheet! </p>
+</div>
+	
+<div id="container"> 
+<br>
+	<div id="email">
+		<form onsubmit="return false;" action="demo_form.asp" method="get">
+		<fieldset>
+		Email Address: (press enter when done)<input type="email" style="width:400px; height=10px;" name="email" required placeholder="Enter a valid email address">
+		</fieldset>
+	</div>
+	<br>
+	<div id="message">
+		<p>&nbsp;Message(optional): <textarea name="message" cols="57" rows="10" style="margin-left:15px;"></textarea></p>
+	</div>
+
+	<div id="question">
+	<p>&nbsp;&nbsp;&nbsp;What type of work is this for? </p>
+	</div>
+	
+
+	<div id="working">
+
+	<p id ="work">&nbsp;Time working on visual effects for the movie</p>
+		<div id="round-button">
+		<div id="round-button-circle"><button type="button" onclick="changeStyle()">&#9989</button>
+		</div></div>
+
+		<script>
+		status = 1;
+		function changeStyle() {
+			x = document.getElementById("work");
+
+			if(status==1) {
+    		x.style.color = '#8ed2c9';
+   			 status = 2;
+			} else if(status==2) {
+    		x.style.color = '#black';
+   			 status = 3;
+   			} else if(status==3) {
+    		x.style.color = 'black';
+    		status = 1;
+			}
+   		}
+   		</script>
+   		</div>
+
+	<div id="reviewing">
+	<p id="review">&nbsp;Time spent reviewing the work of a junior artist</p>
+	<div id="round-button">
+		<div id="round-button-circle"><button type="button" onclick="changeStyleRe()">&#9989</button>
+		</div></div>
+
+		<script>
+		status = 1;
+		function changeStyleRe() {
+			x = document.getElementById("review");
+
+			if(status==1) {
+    		x.style.color = '#8ed2c9';
+   			 status = 2;
+			} else if(status==2) {
+    		x.style.color = '#black';
+   			 status = 3;
+   			} else if(status==3) {
+    		x.style.color = 'black';
+    		status = 1;
+			}
+   		}
+   		</script>
+	</div>
+
+<div id="haha">
+<p>(double click to unhighlight)</p>
+</div>
+
+</div>
+
+<div id="footer">
+
+<div id="clear">
+	<button type="reset" style="width:120px;height:60px;font-size:20px; font-family:courier new;"value="Reset" onclick="resetOption()">Clear</button>
+
+	<script>
+		function resetOption() {
+			x = document.getElementById("work");
+			y = document.getElementById("review");
+    		x.style.color = 'black';
+    		y.style.color = 'black';
+    	}
+	</script>
+</div>
+</form>
+
+<div id="next">
+<button type="button" onclick="next()"style="width:120px;height:60px;
+font-size:20px;font-family:courier new;">Next</button>
+
+<script>
+
+	function next() {
+	setTimeout(function(){window.location.href='load.html'},
+	1000);
+}
+</script>
+
+</div>
+
+<!-- <div id="page">
+
+<script>setTimeout(function(){window.location.href='done.html'},
+	2000);</script>
+</div>
+
+<div id="loading"></div> -->
+
+</div>
+
+</body>
+</html>
